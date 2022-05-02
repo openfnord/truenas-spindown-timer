@@ -298,3 +298,11 @@ So I copied the script to /usr/local/bin and call the manual mode:
 
 /usr/local/bin/spindown_timer.sh -t 3000 -p 600 -m -i ada0 -i ada1 -i ada2 -i ada3
 
+So this is 3000(s)/60(s/min)=50min
+Why so "long"?
+
+As one does not want to wear the disks my too many spindowns/spinups. If one goes away from the computer or goes to bed, 50 minutes
+idle time is sufficient for detection but there are many cases where one just uses the nas for short durations and then re-uses it after
+40 minutes or so, e.g. when writing a scientific document and storing some intermediate versions from time to time.
+So 50 minutes is a quite good value.
+
