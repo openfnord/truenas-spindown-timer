@@ -291,16 +291,10 @@ The script is heavily inspired by:
 [https://serverfault.com/a/969252](https://serverfault.com/a/969252)
 
 
-## Support
+## Example with 4 NAS drives:
 
-My work helped you in some way, or you just like it? Awesome!
+Here im my NAS USB sticks are used as system-disks and you do NOT want to "spin-down" USB sticks, as they my explode or do some unwanted things.
+So I copied the script to /usr/local/bin and call the manual mode:
 
-If you want to support me, you can consider buying me a coffee/tea/mate. Thank
-You! <3
-
-<a href="https://paypal.me/ngandrass">
-  <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" width="220px" alt="Donate with PayPal" />
-</a>
-
-[![ko-fi.com/ngandrass](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A3XX87)
+/usr/local/bin/spindown_timer.sh -t 3000 -p 600 -m -i ada0 -i ada1 -i ada2 -i ada3
 
