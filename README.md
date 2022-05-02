@@ -293,7 +293,7 @@ The script is heavily inspired by:
 
 ## Example with 4 NAS drives:
 
-Here im my NAS USB sticks are used as system-disks and you do NOT want to "spin-down" USB sticks, as they my explode or do some unwanted things.
+Here im my NAS USB sticks are used as system-disks and you do NOT want to "spin-down" USB sticks, as they may explode or do some unwanted things.
 So I copied the script to /usr/local/bin and call the manual mode:
 
 /usr/local/bin/spindown_timer.sh -t 3000 -p 600 -m -i ada0 -i ada1 -i ada2 -i ada3
