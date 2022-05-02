@@ -298,7 +298,7 @@ So I copied the script to /usr/local/bin and call the manual mode:
 
 /usr/local/bin/spindown_timer.sh -t 3000 -p 600 -m -i ada0 -i ada1 -i ada2 -i ada3
 
-So this is 3000[s]/60[s/min]=50min
+So this is 3000[s] / 60[s/min] = 50min
 
 Why such a "long" time?
 
