@@ -12,11 +12,11 @@ excluded. This allows users to have S.M.A.R.T. reporting enabled while still
 being able to automatically spin down disks. The script moreover is immune to
 the periodic disk temperature reads in newer versions of TrueNAS.
 
-Successfully tested on:
-  * `TrueNAS-12.0-U8.1 (Core)`
+Successfully tested on (most relevant):
+  * **`TrueNAS-13.0-U3.1 (Core)`**
+  * **`TrueNAS SCALE 22.02.3`**
   * `TrueNAS-12.0 (Core)`
   * `FreeNAS-11.3`
-  * `FreeNAS-11.2`
 
 A full list of all tested TrueNAS / FreeNAS versions can be found at the end of
 this file.
@@ -27,6 +27,7 @@ this file.
   * Periodic S.M.A.R.T. reads do not reset the disk idle timers
   * Configurable idle timeout and poll interval
   * Support for ATA and SCSI devices
+  * Works with both TrueNAS Core and TrueNAS SCALE
   * Per-disk idle timer / Independent spindown
   * Automatic detection or explicit listing of drives to monitor
   * Ignoring of specific drives (e.g. SSD with system dataset)
@@ -87,6 +88,18 @@ level 128 or above.
 _Note: In older versions of FreeNAS it was required to set the S.M.A.R.T `Power
 Mode` to `Standby`. This setting was configured globally and was located under
 `Services > S.M.A.R.T. > Configure`._
+
+
+### System dataset placement
+
+Having the TrueNAS system dataset placed inside a pool prevents the spindown of
+contained disks. Therefore it should be located on a disk that will not be spun
+down (e.g. the OS SSD).
+
+The location of the system dataset can be configured under `System > System
+Dataset`.
+
+![System Dataset settings](screenshots/system-dataset.png)
 
 
 ### Deploy script
@@ -239,6 +252,7 @@ Setting `TIMEOUT` to 0 results in no shutdown.
 
 This script was successfully tested on the following OS versions:
 
+### TrueNAS (Core)
 * `TrueNAS-12.0-U8 (Core)`
 * `TrueNAS-12.0-U7 (Core)`
 * `TrueNAS-12.0-U6.1 (Core)`
@@ -256,6 +270,9 @@ This script was successfully tested on the following OS versions:
 * `FreeNAS-11.3`
 * `FreeNAS-11.2-U7`
 * `FreeNAS-11.2-U4.1`
+
+### TrueNAS SCALE
+* `TrueNAS SCALE 22.02.3`
 
 _Intermediate OS versions not listed here have not been explicitly tested, but
 the script will most likely be compatible._
